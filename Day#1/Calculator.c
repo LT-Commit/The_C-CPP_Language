@@ -15,7 +15,7 @@ const char Getsymbol()
     char mySymbol;
 
     printf("Enter a maths symbol: (* , + , -, /): ");
-    scanf("%c", &mySymbol);
+    scanf("%char", &mySymbol);
     return mySymbol;
 }
 
@@ -43,8 +43,10 @@ int main()
         while(running)
         {
             a = Getnumber();
+
             b = Getnumber();
             s = Getsymbol();
+            
             c = calculatedNum(a, b, s);
             printf("%f", c);
 
