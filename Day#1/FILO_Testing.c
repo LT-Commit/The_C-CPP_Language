@@ -5,16 +5,15 @@
 int main()
 {
     int x,y = 0;
-    int yMax,xMax= 255;
+    int xMax= 255;
     int yLower,xLower= 255;
 
-    while(x != xMax)
+    if(x >= xMax)
     {
         printf("Your number is %d\n", x);
-        x++;
+        x + 1;
 
     }
-
 
 
     return 0;
