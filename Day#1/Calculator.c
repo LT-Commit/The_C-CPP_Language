@@ -6,7 +6,7 @@ const int Getnumber()
     int myNumber;
 
     printf("Enter an integer: ");
-    scanf("%i", &myNumber);
+    scanf("%d", &myNumber);
     return myNumber;
 }
 
@@ -15,7 +15,7 @@ const char Getsymbol()
     char mySymbol;
 
     printf("Enter a maths symbol: (* , + , -, /): ");
-    scanf("%char", &mySymbol);
+    scanf("%c", &mySymbol);
     return mySymbol;
 }
 
