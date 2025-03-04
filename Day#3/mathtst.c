@@ -10,8 +10,11 @@ int main()
 
     float MEOW = {UMATH_PITHAG(a, b)};
 
+    float MEOW2 = {UMATH_PITHAG(b, a)};
 
-    printf("%f", MEOW);
+
+    printf("\n%f", MEOW);
+    printf("\n%f", MEOW2);
 
    return 0;
 }
