@@ -4,15 +4,17 @@
 
 int main()
 {
-    int x,y = 0;
-    int xMax= 255;
-    int yLower,xLower= 255;
+    char Meowlist[4];
 
-    if(x >= xMax)
+    Meowlist[0] = 'b';
+    Meowlist[1] = 'b';
+    Meowlist[2] = 'b';
+    Meowlist[3] = 'b';
+    
+    
+    for(int i = 0; i != 4; i++)
     {
-        printf("Your number is %d\n", x);
-        x + 1;
-
+        printf("%c", Meowlist[i]);
     }
 
 

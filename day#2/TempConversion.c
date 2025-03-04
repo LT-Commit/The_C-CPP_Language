@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <time.h>
 
 float FehConvert(float celc)
 {
