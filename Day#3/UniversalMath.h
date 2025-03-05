@@ -17,3 +17,12 @@ int UMATH_RandomNum(int max)
     RandNum = rand() % max +1;
     return RandNum;
 }
+
+float UMATH_GravityForceOfGravity(float graviationalConstant, float MassObj1, float MassObj2, float Distance) // Newtons universal naw of gravitation
+{
+    // F = (G*M*m)/r*r
+    float ForceOfGravity;
+
+    float ForceOfGravity = (graviationalConstant* MassObj1 * MassObj2)/Distance*Distance;
+    return ForceOfGravity;
+}
