@@ -9,6 +9,6 @@ int main()
     printf("%d", bin(test));
 
 
-
-    return 0;
+    
+return 0;
 }

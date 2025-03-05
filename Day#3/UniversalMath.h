@@ -26,3 +26,4 @@ float UMATH_GravityForceOfGravity(float graviationalConstant, float MassObj1, fl
     float ForceOfGravity = (graviationalConstant* MassObj1 * MassObj2)/Distance*Distance;
     return ForceOfGravity;
 }
+
