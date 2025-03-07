@@ -10,6 +10,7 @@ int main()
     {
         nc++;
         printf("Amount of charecters in total: %1d\n", nc);
+
     }
 
     return 0;

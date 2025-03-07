@@ -2,6 +2,7 @@
     "files.associations": {
         "*.embeddedhtml": "html",
         ".fantomasignore": "ignore",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "SHORT.C": "cpp"
     }
 }
