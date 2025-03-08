@@ -3,6 +3,7 @@
         "*.embeddedhtml": "html",
         ".fantomasignore": "ignore",
         "stdio.h": "c",
-        "SHORT.C": "cpp"
+        "SHORT.C": "cpp",
+        "universalmath.h": "c"
     }
 }
