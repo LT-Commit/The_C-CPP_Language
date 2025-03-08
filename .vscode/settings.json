@@ -4,6 +4,8 @@
         ".fantomasignore": "ignore",
         "stdio.h": "c",
         "SHORT.C": "cpp",
-        "universalmath.h": "c"
+        "universalmath.h": "c",
+        "time.h": "c",
+        "string.h": "c"
     }
 }
