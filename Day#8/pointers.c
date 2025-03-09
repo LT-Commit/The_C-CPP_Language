@@ -19,26 +19,34 @@ int main()
 
     bool exit = true;
     
-    char option;
+    
+    
     while(exit)
     {
-        
+        int option;
+
         printf("1: Change name\n2: Show name\n3: Quit\n");
         printf("Select your option: ");
-        scanf("%c\n", &option);
+        scanf("%d\n", &option);
 
-        if( option = '1')
+        switch (option)
         {
-            printf("Enter your new name: ");
-            scanf("\n%c", Name);
-        }
-        if(option = '2')
-        {
-            printf("\n%c", Name);
-        }
-        if(option = '3')
-        {
+        case 1:
+            printf("\nEnter your new name: ");
+            scanf("\n%c", &Name);
+            break;
+
+        case 2:
+            printf("\n%c\n", Name);
+            break;
+
+        case 3:
             exit == false;
+            break;
+        
+        default:
+            printf("\nInput a valid option:\n");
+            break;
         }
     }
 
