@@ -2,9 +2,18 @@
 
 int main()
 {
-    char LetterList[] = "ABCDEFJ";
+    char LetterList[] = "meow";
 
-    printf("%c", LetterList[1]);
+    
 
+
+    for(short i = 0; i <= sizeof(LetterList); i++)
+    {
+        printf("%c", LetterList[i]);
+    }
+
+
+
+    printf("\n");
     return 0;
 }
