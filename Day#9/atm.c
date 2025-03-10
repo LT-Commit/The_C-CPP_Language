@@ -9,7 +9,7 @@ int Addition;
 void Welcome()
 {
     printf("Welcome to the ATM\n");
-    printf("Please select your option:\n1. Show bal\n2. Add money\n3. Withdraw\n4. Quit");
+    printf("Please select your option:\n1. Show bal\n2. Add money\n3. Withdraw\n4. Quit\n");
 }
 
 int main()
