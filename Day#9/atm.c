@@ -6,6 +6,7 @@ char UserOption;
 int withdraw;
 int Addition;
 int TempMoni;
+bool MainLoop = true;
 
 void Welcome()
 {
@@ -29,9 +30,10 @@ void Withdrawmoney()
 
 int main()
 {
-    while (true)
+    while (MainLoop)
     {
         Welcome();
+        UserOption = 0;
         scanf("%c", &UserOption);
 
         switch (UserOption)
@@ -39,16 +41,18 @@ int main()
         case '1':
             printf("Your balance is: %d\n", Balance);
             break;
+
         case '2':
-            
             Addmoney();
             break;
+
         case '3':
             Withdrawmoney();
             break;
         
-        default:
-            printf("\nThank you for using the ATM!");
+        case '4':
+            printf("\nThank you for using the ATM!\n");
+            MainLoop = false;
             break;
         }
         
