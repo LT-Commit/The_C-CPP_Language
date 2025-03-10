@@ -2,6 +2,7 @@
 #include <stdbool.h>
 
 int Balance = 100;
+char UserOption;
 int withdraw;
 int Addition;
 
@@ -16,6 +17,17 @@ int main()
     while (true)
     {
         Welcome();
+        scanf("%c", &UserOption);
+
+        switch (UserOption)
+        {
+        case '1':
+            printf("%d", Balance);
+            break;
+        
+        default:
+            break;
+        }
         
         break;
     }
