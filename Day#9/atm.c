@@ -9,7 +9,7 @@ int Addition;
 void Welcome()
 {
     printf("Welcome to the ATM\n");
-    printf("Please select your option:\n1. Show bal\n2. Add money\n3. Withdraw\n");
+    printf("Please select your option:\n1. Show bal\n2. Add money\n3. Withdraw\n4. Quit");
 }
 
 int main()
@@ -22,7 +22,7 @@ int main()
         switch (UserOption)
         {
         case '1':
-            printf("%d", Balance);
+            printf("Your balance is: %d\n", Balance);
             break;
         
         default:
