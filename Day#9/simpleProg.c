@@ -2,7 +2,9 @@
 
 int main()
 {
-    char chest[] = "64x Chests";
+    printf("Chest Invenctory:\n");
+
+    char chest[40] = "64x Chests\n64x Sticks\n64x Wooden Planks";
 
     for(int i = 0; i <= sizeof(chest); i++)
     {
