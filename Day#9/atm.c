@@ -10,8 +10,10 @@ bool MainLoop = true;
 
 void Welcome()
 {
+    UserOption = 0;
     printf("Welcome to the ATM\n");
     printf("Please select your option:\n1. Show bal\n2. Add money\n3. Withdraw\n4. Quit\n");
+    UserOption = getchar();
 }
 
 void Addmoney()
@@ -33,8 +35,7 @@ int main()
     while (MainLoop)
     {
         Welcome();
-        UserOption = 0;
-        scanf("%c", &UserOption);
+        
 
         switch (UserOption)
         {
