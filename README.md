@@ -1,2 +1,2 @@
-# The C programming Language
- In this im going to be reading the whole book by Brian W and make all the projects i make fully available here. This will serve as a log 
+# The C/C++ programming Language
+ This will serve as a log For all the projects im going to do, this is from learning the basics to making projects, All the days will be in folders im going to try make a project a day 
