@@ -7,15 +7,16 @@
 // variables
 
 bool MainLoop = true;
-int Balance = 0;
+int Balance = 100;
 int GameMoney;
 bool GameLoop = true;
+bool win;
 
 
 // functions
 void TableWelcome();
-void PlayerHand();
-void HouseHand();
+bool PlayerHand();
+bool HouseHand();
 int GameBal();
 
 // classes
@@ -29,15 +30,30 @@ int main()
     while (MainLoop)
     {
         std::cout<< "Your balance is: " << Balance;
-        GameMoney = GameBal();
+        GameMoney = GameBal(); // Get how much the player is playing with
 
         while (GameLoop)
         {
-            /* code */
-        }
-        
+            bool Playerwin = HouseHand();
+            bool HouseWin = PlayerHand();
 
-        MainLoop = false;
+
+            if(Playerwin)
+            {
+                std::cout << "\nYou won!\n";
+                Balance = Balance + (GameMoney  * 2); 
+                break;
+            }
+            if(HouseWin)
+            {
+                std::cout << "You lost! You have lost " << GameMoney << std::endl;
+                Balance = Balance - GameMoney;
+                break;  
+            }
+            
+        }
+
+        
     }
     
 
@@ -71,7 +87,13 @@ int GameBal()
         }
 
     }
-    
-    
+}
 
+bool PlayerHand()
+{
+
+}
+bool HouseHand()
+{
+    
 }
