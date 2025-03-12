@@ -1,9 +1,11 @@
 #include <iostream>
+// I feel like i wrote this code alot better than what i usually do , i planned my functions and variables and noted them down above
+// this let main me at the top and i like it that way will do this in the future
 
 // Declaring varialbes
 
 bool MainLoop = true;
-int Balance = 100;
+long int Balance = 100;
 int TempMoney;
 char UserInput;
 
