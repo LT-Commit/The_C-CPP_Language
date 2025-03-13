@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iterator> // needed for size() with raw arrays
+#include <vector>
 
 // Just a simple car dealership with a fixed amount of cars with an array
 
