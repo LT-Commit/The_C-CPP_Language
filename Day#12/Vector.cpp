@@ -21,4 +21,5 @@ int main()
         std::cout << num << " ";
     }
     std::cout << "\n"; // just prints a spare line under this
+
 }
