@@ -11,7 +11,7 @@ struct Cards // Calling the struct name
 
 int main()
 {
-    Cards AS = {"Ace of spades", 3};
+    Cards AS = {"Ace of spades", 3}; // Defining AS with the struct "Cards" which we created
 
     std::cout << "Card name: " << AS.CardName << std::endl;
     std::cout << "Card value: " << AS.Value << std::endl;
