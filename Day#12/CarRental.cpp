@@ -37,22 +37,25 @@ int main()
     Car("Carname", "Modelname", 3 , 3.3)
    };
 
-   int num = 0;
-
-   ShowCarDetails(cars[0]);
-
-
    
+   std::cout << "List of all cars:\n";
+   for( int i = 0; i < (sizeof(cars) / sizeof(cars[0])); i++)
+   {
+        ShowCarDetails(cars[i]);
+        std::cout << "\n";
+   }
+
    return 0;
 }
 
 void ShowCarDetails(Car cars)
 {
-   std::cout<< "Our first car is : \n"<< cars.CarName << std::endl;
+   std::cout<< "Car details: \n"<< cars.CarName << std::endl;
    std::cout << cars.ModelName << std::endl;
    std::cout << cars.Ageofcar << std::endl;
    std::cout << cars.RentalPrice << "$ per hour"<< std::endl;
    if(cars.IsRented == false ) 
    {std::cout << "Available for rent!\n";} 
    else{std::cout << "UNAVAIBALE\n";}
+   std::cout << "---------------------------------------------\n";
 }
