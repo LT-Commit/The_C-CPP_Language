@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iterator> // needed for size() with raw arrays
 
 // Just a simple car dealership with a fixed amount of cars with an array
 
@@ -26,8 +27,8 @@ struct Car
 
 };
 // Future function list
-void ShowCarDetails(const Car& cars); // Passing by reference instead of copying like i was before, this is way better for conserving memory for runtime
-void ListCars(const Car& cars);
+void ShowCarDetails(const Car& car); // Passing by reference instead of copying like i was before, this is way better for conserving memory for runtime
+
 
 int main()
 {
@@ -40,7 +41,7 @@ int main()
 
    
    std::cout << "List of all cars:\n";
-   for( int i = 0; i < (sizeof(cars) / sizeof(cars[0])); i++)
+   for( size_t i = 0; i < std::size(cars); i++)
    {
         ShowCarDetails(cars[i]);
    }
@@ -48,16 +49,16 @@ int main()
    return 0;
 }
 
-void ShowCarDetails(const Car& cars)
+void ShowCarDetails(const Car& car)
 {
-   std::cout<< "Car details: \n"<< cars.CarName << std::endl;
-   std::cout << cars.ModelName << std::endl;
-   std::cout << cars.Ageofcar << std::endl;
-   std::cout << cars.RentalPrice << "$ per hour"<< std::endl;
+   std::cout<< "Car details: \n"<< car.CarName << std::endl;
+   std::cout << car.ModelName << std::endl;
+   std::cout << car.Ageofcar << std::endl;
+   std::cout << car.RentalPrice << "$ per hour"<< std::endl;
    //if(cars.IsRented == false ) 
    //{std::cout << "Available for rent!\n";} 
    //else{std::cout << "UNAAVAILABLE\n";}
-   std::cout << "Availability: " << (cars.IsRented ? "UNAVAILABLE" : "Available!\n"); // This is way better and easier to read than above
+   std::cout << "Availability: " << (car.IsRented ? "UNAVAILABLE\n" : "Available!\n"); // This is way better and easier to read than above
    std::cout << "---------------------------------------------\n"; // Seperator of cars
 }
 
