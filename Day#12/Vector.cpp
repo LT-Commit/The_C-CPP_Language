@@ -3,8 +3,8 @@
 
 int main()
 {
-    std::vector<int> numbers = {1,2,3,3,2,23,3};
-
+    std::vector<int> numbers = {1,2,3,3,2,23,3}; // Making the array, this doesnt have to have any data in but i put some dummy data to test
+    std::cout << "Current data in vector:\n";
     for(int num : numbers)
     {
         std::cout << num << " ";
@@ -16,9 +16,9 @@ int main()
     numbers.push_back(223); // pushes numbers to the front of the vector; This is really big and i need to use this for dynamic arrays
     
     std::cout << "\nWith pushes: \n";
-    for(int num : numbers)
+    for(int num : numbers) // The colon means for each element do this specific thing which is cout num, that simple
     {
         std::cout << num << " ";
     }
-    std::cout << "\n";
+    std::cout << "\n"; // just prints a spare line under this
 }
