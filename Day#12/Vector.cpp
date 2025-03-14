@@ -22,4 +22,17 @@ int main()
     }
     std::cout << "\n"; // just prints a spare line under this
 
+    std::cout << "With pops: \n";
+    numbers.pop_back();
+    numbers.pop_back();
+    numbers.pop_back();
+
+    for(int num : numbers) // The colon means for each element do this specific thing which is cout num, that simple
+    {
+        std::cout << num << " ";
+        
+    }
+
+    
+
 }
