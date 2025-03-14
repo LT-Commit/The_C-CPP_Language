@@ -3,7 +3,7 @@
 
 int main()
 {
-    std::vector<int> numbers = {1,2,3,3,2,23,3}; // Making the array, this doesnt have to have any data in but i put some dummy data to test
+    std::vector<int> numbers; // Making the array, this doesnt have to have any data in but i put some dummy data to test
     std::cout << "Current data in vector:\n";
     for(int num : numbers)
     {
@@ -21,7 +21,7 @@ int main()
         std::cout << num << " ";
     }
     std::cout << "\n"; // just prints a spare line under this
-
+    std::cout << "\n";
     std::cout << "With pops: \n";
     numbers.pop_back();
     numbers.pop_back();
