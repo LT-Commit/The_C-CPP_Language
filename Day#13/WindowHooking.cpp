@@ -4,6 +4,7 @@
 int main()
 {
     const std::string WindowName = "Counter-Strike 2";
+    RECT rec;
 
     HWND Windowmem = FindWindow(nullptr, WindowName.c_str()); 
 
@@ -14,6 +15,12 @@ int main()
     else{
         std::cout << "\nCSGO Not found\n";
     }
+
+    if(GetWindowRect(Windowmem,&rec))
+    {
+        std::cout << "Window position = L" << rec.left<< " T" << rec.top << "\n";
+    }
+
 
     std::cout <<"Window address is: " << Windowmem;
     SetForegroundWindow(Windowmem); // Set window to front (Forground app)
