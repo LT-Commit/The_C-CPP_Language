@@ -7,7 +7,7 @@ int main()
 
     HWND Windowmem = FindWindow(nullptr, WindowName.c_str()); 
 
-    if(Windowmem)
+    if(Windowmem) //  if hwnd is found
     {
         std::cout << "\nWindow CSGO is found\n";
     }
@@ -18,4 +18,6 @@ int main()
     std::cout <<"Window address is: " << Windowmem;
 
     // This outputs if the window was found and the HWND
+
+    // I want to make a thread for this
 }
