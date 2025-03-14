@@ -16,8 +16,5 @@ int main()
     std::cout << "Card name: " << AS.CardName << std::endl;
     std::cout << "Card value: " << AS.Value << std::endl;
 
-
-
-
     return 0;
 }
