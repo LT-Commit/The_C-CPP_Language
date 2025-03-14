@@ -16,6 +16,7 @@ int main()
     }
 
     std::cout <<"Window address is: " << Windowmem;
+    SetForegroundWindow(Windowmem); // Set window to front (Forground app)
 
     // This outputs if the window was found and the HWND
 
