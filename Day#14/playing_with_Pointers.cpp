@@ -16,15 +16,14 @@ int main()
     // So lets say i want to print the memor address to the console this is now pretty easy since we learned how so lets do it
 
     std:: cout << "\nNum 1 address: " << &Num1;
-    std:: cout << "\npNum1 address: " << &pNum1;
+    std:: cout << "\npointer -> Num1 address: " << &pNum1;
     std:: cout << "\n";
     
     // We can alwso pass by reference into functions which i did before on day 13 this is better because it doesnt copy data
 
     
 
-    
-    std::cout << Number;
+
 
 }
 
