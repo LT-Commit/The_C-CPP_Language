@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 // Function List
 void Log(auto Message);
 
@@ -20,6 +21,16 @@ int main()
     std:: cout << "\n";
     
     // We can alwso pass by reference into functions which i did before on day 13 this is better because it doesnt copy data
+
+    // The pointers we are allocating right now are in the stack so what if we want to do it in the Heap well lets do that
+
+    char* buffer = new char[8]; // Makes a 8 byte block since a char is 1 byte , Then returns a pointer to that first stack
+    memset(buffer, 0, 8); // This will set the block of data to what we want 
+
+    std:: cout << buffer[1];
+
+
+    delete[] buffer; // Delete the data when we dont use it anymore this will stop a memory leak since we are workign with the stack now
 
     
 
