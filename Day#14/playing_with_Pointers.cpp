@@ -1,6 +1,6 @@
 #include <iostream>
 // Function List
-void Log(int Message);
+void Log(auto Message);
 
 
 int main()
@@ -12,9 +12,18 @@ int main()
 
     *pNum1 = NewValue;  // DEREFERENCE pNum1 Which will be the address of Num1 which we gave it and set it to the new value
     Log(Num1); // print the new output of num 1 Which will be 100
+
+    // So lets say i want to print the memor address to the console this is now pretty easy since we learned how so lets do it
+
+    std:: cout << "\nNum 1 address: " << &Num1;
+    std:: cout << "\npNum1 address: " << &pNum1;
+    std:: cout << "\n";
+    
+    // Since we know the addresses we can actually do something like this
+
 }
 
-void Log(int Message)
+void Log(auto Message)
 {
     std::cout << Message << std::endl;
 }
