@@ -19,7 +19,12 @@ int main()
     std:: cout << "\npNum1 address: " << &pNum1;
     std:: cout << "\n";
     
-    // Since we know the addresses we can actually do something like this
+    // We can alwso pass by reference into functions which i did before on day 13 this is better because it doesnt copy data
+
+    
+
+    
+    std::cout << Number;
 
 }
 
