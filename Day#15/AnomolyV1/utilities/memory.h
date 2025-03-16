@@ -88,6 +88,8 @@ public:
 	}
 
 	// THAT IS OUT FINISHED MEMORY 
+
+	// just quickly if i ever wanted to bypass an AC (some ac's anyway) i said before that writeprocess memory is detected so we would need to write my own WriteProcessMemory
 };
 
 
