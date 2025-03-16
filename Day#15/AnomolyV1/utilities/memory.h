@@ -1,6 +1,6 @@
 #pragma once
 #include <Tlhelp32.h> // has our capture process list
-#include <windows.h>
+#include <Windows.h>
 
 #include <cstdint>
 #include <string_view>
@@ -15,9 +15,18 @@ public:
 	// constuctions and functions go here
 	Memory(const std::string_view processName) noexcept // NO EXEPTIONS WILL optimise the code and make it faster, we are also passing in a const string view called processName
 	{
+
 		::PROCESSENTRY32 entry = { }; // used to store data about a process while enumirating
 		entry.dwSize = sizeof(::PROCESSENTRY32); // WINAPI what says set entry.dwSize as the size of processsentry32, without this u might expirence crashes/bugs
+
+		const auto processSnapshot = ::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0); 
+
+		// compare if process name the same as the process in the list if so get process ID. To do that we can:
+
+		while(::Process32Next)
 	}
+
+
 };
 
 // create snapshot of all windows
