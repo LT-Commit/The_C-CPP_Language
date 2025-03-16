@@ -54,7 +54,7 @@ int main()
 	
 	for (const auto& line : logo)
 	{
-		std::cout << line << std::endl;
+		std::cout << yellow << line << std::endl;
 	}
 
 
