@@ -22,4 +22,8 @@ constexpr auto Grenades = 0x158;
 
 constexpr auto ARTimer = 0x178; // ROF
 
+//			Name offset
+
+constexpr auto nameOffsetWithinPadding = 0x0225;
+
 

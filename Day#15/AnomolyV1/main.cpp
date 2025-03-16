@@ -28,6 +28,17 @@ std::vector<std::string> logo
 	"                                     |___/ "
 };
 
+// Get the users username from game, We got the offset for the username before so its easy;
+
+class NamePadding
+{
+public:
+	char preNamePadding[29]; //0x0208
+	char maxCharecterInName[16]; //0x0225
+	char postNamePadding[3641]; //0x0235
+};
+
+
 // I want to modify health , ammo, armor, grenades 
 
 int main()
@@ -41,11 +52,15 @@ int main()
 	const auto HealthAddress = LocalPlayerAddress + Health;
 	const auto ArmorAddress = LocalPlayerAddress + Armor;
 	const auto ARammoAddress = LocalPlayerAddress + ARammo;
+	const auto nameAddress = LocalPlayerAddress + nameOffsetWithinPadding;
 
 
 		memory.Write<int>(HealthAddress, 9999); //TYpecaset to int because its a 4 bytes of health
 		memory.Write<int>(ArmorAddress, 9999);
 		memory.Write<int>(ARammoAddress, 9999);
+
+		std::string name = memory.Read<NamePadding>(nameAddress).preNamePadding;
+
 		
 		// AYY all this works 
 	
@@ -56,6 +71,9 @@ int main()
 	{
 		std::cout << yellow << line << std::endl;
 	}
+	std::cout << std::endl << white << "_________________________________________________" << yellow<< std::endl;
+
+	std::cout << "Welcome to Anomoly, " << magenta << name << yellow << std::endl;
 
 
 
