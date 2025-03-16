@@ -78,7 +78,13 @@ public:
 	{
 		T value = { };
 		::ReadProcessMemory(processHandel, reinterpret_cast<vonst void*>(address), &value, sizeof(T), NULL);
-		return value;
+		return value; // retriving the write value
+	}
+
+	template <typename T>
+	constexpr void Write(const std::uintptr_t& address, const T& value) const noexcept
+	{
+		::WriteProcessMemory(processHandel, reinterpret_cast<void*>(address), &value, sizeof(T), NULL);
 	}
 
 
