@@ -1,6 +1,8 @@
 #pragma once
-#include <Tlhelp32.h> // has our capture process list
-#include <Windows.h>
+#include <windows.h> // ALWAYS DEFINE WINDOWS.H FIRST OVER TLHELP32
+#include <tlhelp32.h> // has our capture process list
+
+
 
 #include <cstdint>
 #include <string_view>
@@ -19,11 +21,17 @@ public:
 		::PROCESSENTRY32 entry = { }; // used to store data about a process while enumirating
 		entry.dwSize = sizeof(::PROCESSENTRY32); // WINAPI what says set entry.dwSize as the size of processsentry32, without this u might expirence crashes/bugs
 
-		const auto processSnapshot = ::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0); 
+		const auto processSnapshot = ::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0); // SNAP ALL THE PROCESSES AND SAVE IN PROCESS SNAPSHOT
 
-		// compare if process name the same as the process in the list if so get process ID. To do that we can:
+		// compare if process name the same as the process in the list if so get process ID. If not do next ect ect
 
-		while(::Process32Next)
+		while (::Process32Next(processSnapshot, &entry)) // While there are processes
+		{
+			if (!processName.compare(entry.szExeFile)) // If process name compared to exe file is TRUE
+			{
+				processId = entry.th32ProcessID; // NOW WE HAVE PROCESS ID
+			}
+		}
 	}
 
 
