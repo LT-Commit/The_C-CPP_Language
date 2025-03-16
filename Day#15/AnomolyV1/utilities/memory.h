@@ -8,6 +8,7 @@ class Memory
 {
 private:
 	std::uintptr_t processId = NULL; // untptr_t is a DWORD what supports both 32 and 64 bit games and since we wanna make it universal we do it like that
+	void* processHandel = nullptr; // We want to store a handel which is also known as a void* so we make a variable for it to be stored in and set it as nullptr aka 0
 };
 
 // create snapshot of all windows
