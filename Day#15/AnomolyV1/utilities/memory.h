@@ -82,12 +82,12 @@ public:
 	}
 
 	template <typename T>
-	constexpr void Write(const std::uintptr_t& address, const T& value) const noexcept
+	constexpr void Write(const std::uintptr_t& address, const T& value) const noexcept // Void since we writing to it dont need to trurn CONST REF TO WHAT WE WANNA WRITE TOO
 	{
-		::WriteProcessMemory(processHandel, reinterpret_cast<void*>(address), &value, sizeof(T), NULL);
+		::WriteProcessMemory(processHandel, reinterpret_cast<void*>(address), &value, sizeof(T), NULL); // Giving a address to cast void pointer
 	}
 
-
+	// THAT IS OUT FINISHED MEMORY 
 };
 
 
