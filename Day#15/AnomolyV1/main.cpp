@@ -12,10 +12,16 @@ int main()
 	const auto LocalPlayerAddress = memory.Read<std::uintptr_t>(ModuleBaseAddress + localPlayer); // DEREFERENCE POINTER -> Local player Address (address)
 
 	const auto HealthAddress = LocalPlayerAddress + Health;
+	const auto ArmorAddress = LocalPlayerAddress + Armor;
+	const auto ARammoAddress = LocalPlayerAddress + ARammo;
 
 	while (true)
 	{
 		memory.Write<int>(HealthAddress, 9999); //TYpecaset to int because its a 4 bytes of health
+		memory.Write<int>(ArmorAddress, 9999);
+		memory.Write<int>(ARammoAddress, 9999);
+		
+		// AYY all this works 
 	}
 
 
