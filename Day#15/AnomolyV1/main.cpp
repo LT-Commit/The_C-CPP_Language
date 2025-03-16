@@ -45,24 +45,20 @@ int main()
 {
 	Memory memory{ "ac_client.exe"} ; // Using the mem constructor for a snapshot of the process on our computer if we have the process open  and takes the proceess ID jsut doing it yk
 
+	//			Get the addresses
+
 	const auto ModuleBaseAddress = memory.GetModuleAddress("ac_client.exe"); // getting the "ac client module address" we can now just add the thing
-
 	const auto LocalPlayerAddress = memory.Read<std::uintptr_t>(ModuleBaseAddress + localPlayer); // DEREFERENCE POINTER -> Local player Address (address)
-
 	const auto HealthAddress = LocalPlayerAddress + Health;
 	const auto ArmorAddress = LocalPlayerAddress + Armor;
 	const auto ARammoAddress = LocalPlayerAddress + ARammo;
 	const auto GrenadeAddress = LocalPlayerAddress + Grenades;
 	const auto nameAddress = LocalPlayerAddress + nameOffsetWithinPadding;
 
-		std::string name = memory.Read<NamePadding>(nameAddress).preNamePadding;
+	std::string name = memory.Read<NamePadding>(nameAddress).preNamePadding; // Read the name char array for the whole username used in ac
 
-		
-		// AYY all this works 
-	
 
-	std::cout << std::endl;
-	
+	std::cout << std::endl; // New line from the logo
 	for (const auto& line : logo)
 	{
 		std::cout << yellow << line << std::endl;
@@ -75,6 +71,10 @@ int main()
 	std::cout << "F2: Armor Hack " << std::endl;
 	std::cout << "F3: Grenade Hack " << std::endl;
 	std::cout << "F4: Ammo Hack " << std::endl;
+
+
+
+	//			Main while loop
 
 	while (true)
 	{
@@ -95,9 +95,4 @@ int main()
 			memory.Write<int>(ARammoAddress, 9999);
 		}
 	}
-
-
-
-
-
 }
