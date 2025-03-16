@@ -52,12 +52,8 @@ int main()
 	const auto HealthAddress = LocalPlayerAddress + Health;
 	const auto ArmorAddress = LocalPlayerAddress + Armor;
 	const auto ARammoAddress = LocalPlayerAddress + ARammo;
+	const auto GrenadeAddress = LocalPlayerAddress + Grenades;
 	const auto nameAddress = LocalPlayerAddress + nameOffsetWithinPadding;
-
-
-		memory.Write<int>(HealthAddress, 9999); //TYpecaset to int because its a 4 bytes of health
-		memory.Write<int>(ArmorAddress, 9999);
-		memory.Write<int>(ARammoAddress, 9999);
 
 		std::string name = memory.Read<NamePadding>(nameAddress).preNamePadding;
 
@@ -71,9 +67,34 @@ int main()
 	{
 		std::cout << yellow << line << std::endl;
 	}
-	std::cout << std::endl << white << "_________________________________________________" << yellow<< std::endl;
+	std::cout << white << "_________________________________________________" << yellow<< std::endl;
 
 	std::cout << "Welcome to Anomoly, " << magenta << name << yellow << std::endl;
+
+	std::cout << "\nF1: Health Hack " << std::endl;
+	std::cout << "F2: Armor Hack " << std::endl;
+	std::cout << "F3: Grenade Hack " << std::endl;
+	std::cout << "F4: Ammo Hack " << std::endl;
+
+	while (true)
+	{
+		if (GetAsyncKeyState(VK_F1) & 0x8000) //Is f1 being held down? is it being held down?
+		{
+			memory.Write<int>(HealthAddress, 9999); //TYpecaset to int because its a 4 bytes of health
+		}
+		else if (GetAsyncKeyState(VK_F2) & 0x8000)
+		{
+			memory.Write<int>(ArmorAddress, 9999);
+		}
+		else if (GetAsyncKeyState(VK_F3) & 0x8000)
+		{
+			memory.Write<int>(GrenadeAddress, 9999);
+		}
+		else if (GetAsyncKeyState(VK_F3) & 0x8000)
+		{
+			memory.Write<int>(ARammoAddress, 9999);
+		}
+	}
 
 
 
