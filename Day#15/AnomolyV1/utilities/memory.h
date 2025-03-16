@@ -30,17 +30,63 @@ public:
 			if (!processName.compare(entry.szExeFile)) // If process name compared to exe file is TRUE
 			{
 				processId = entry.th32ProcessID; // NOW WE HAVE PROCESS ID
+				processHandel = ::OpenProcess(PROCESS_ALL_ACCESS, FALSE, processId); // Provide read and write, THIS ALSO MAKES IT DETECTABLE , devs know about winapi and detect all access
+				break;
 			}
 		}
+		// CLOSE THE HANDEL HERE TO AVOID MEMORY LEAK
+		if (processSnapshot)
+			::CloseHandle(processSnapshot);
+	}
+	~Memory() // This is a deconstructor
+	{
+		if (processHandel)
+		{
+			::CloseHandle(processHandel);
+		}
+	}
+
+
+	const std::uintptr_t GetModuleAddress(const std::string_view moduleName) const noexcept
+	{
+		::MODULEENTRY32 entry = { };
+		entry.dwSize = sizeof(::MODULEENTRY32);
+
+		const auto processSnapeshot = ::CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, processId);
+
+		std::uintptr_t moduleBaseAddress = 0;
+
+		while (::Module32Next(processSnapeshot, &entry))
+		{
+			if (!moduleName.compare(entry.szModule))
+			{
+				moduleBaseAddress = reinterpret_cast<std::uintptr_t>(entry.modBaseAddr); //typecaset
+				break;
+			}
+
+			
+		}
+		if (processSnapeshot)
+			::CloseHandle(processSnapeshot);
+
+		return moduleBaseAddress; // Returning prefered image base / getmodbase address
+	}
+
+
+	template <typename T> // allows to read any data type
+	constexpr const T Read(const std::uintptr_t& address) const noexcept // constant reference to the address memory return type of read is T so any data type
+	{
+		T value = { };
+		::ReadProcessMemory(processHandel, reinterpret_cast<vonst void*>(address), &value, sizeof(T), NULL);
+		return value;
 	}
 
 
 };
 
-// create snapshot of all windows
-// auto find the right game with name &| class 
-// get full modifying access to the game, read and write
-// we need a getmodulebase address function win api has it we good
+
+
+
 
 // readprocessmemory
 // write process memory
