@@ -17,5 +17,9 @@ constexpr auto Armor = 0xFC;
 //			Guns
 
 constexpr auto ARammo = 0x150;
-constexpr auto ARTimer = 0x178;
+constexpr auto Grenades = 0x158;
+
+
+constexpr auto ARTimer = 0x178; // ROF
+
 

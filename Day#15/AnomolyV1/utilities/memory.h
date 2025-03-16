@@ -77,7 +77,7 @@ public:
 	constexpr const T Read(const std::uintptr_t& address) const noexcept // constant reference to the address memory return type of read is T so any data type
 	{
 		T value = { };
-		::ReadProcessMemory(processHandel, reinterpret_cast<vonst void*>(address), &value, sizeof(T), NULL);
+		::ReadProcessMemory(processHandel, reinterpret_cast<const void*>(address), &value, sizeof(T), NULL);
 		return value; // retriving the write value
 	}
 
