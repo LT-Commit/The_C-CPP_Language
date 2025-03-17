@@ -38,7 +38,7 @@ public:
 		if (processSnapshot)
 			::CloseHandle(processSnapshot);
 	}
-	~Memory() // This is a deconstructor
+	~Memory() // This is a deconstructor avoid memory leaks
 	{
 		if (processHandel)
 		{
@@ -60,7 +60,7 @@ public:
 		{
 			if (!moduleName.compare(entry.szModule))
 			{
-				moduleBaseAddress = reinterpret_cast<std::uintptr_t>(entry.modBaseAddr); //typecaset
+				moduleBaseAddress = reinterpret_cast<std::uintptr_t>(entry.modBaseAddr); //typecaset to unsigned because addresses cant go into the negative
 				break;
 			}
 
