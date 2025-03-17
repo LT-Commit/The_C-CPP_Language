@@ -20,3 +20,4 @@ int main()
 
     return 0;
 }
+//simple but just recapping notes i made on paper
