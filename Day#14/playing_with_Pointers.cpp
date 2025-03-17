@@ -20,7 +20,7 @@ int main()
     std:: cout << "\npointer -> Num1 address: " << &pNum1;
     std:: cout << "\n";
     
-    // We can alwso pass by reference into functions which i did before on day 13 this is better because it doesnt copy data
+    // We can alwso pass by reference into functions which i did before on day 13 this is better because it doesnt copy data46
 
     // The pointers we are allocating right now are in the stack so what if we want to do it in the Heap well lets do that
 
