@@ -28,6 +28,8 @@ void AddNums(T num1, T num2)
 
 // Template to call methods thats all it is simple as dat
 
+// MOST USES CASES ARE THEM IN CLASSES
+
 int main()
 {
     Log<int>(5); // TYPE SPECIFIER as <int>
