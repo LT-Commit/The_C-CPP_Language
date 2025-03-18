@@ -17,7 +17,16 @@ void Log(T message) // void Log taking in an argument of message with the type T
 {
     std::cout << message << std::endl;
 }
+template<typename T>
+void AddNums(T num1, T num2)
+{
+    std::cout<< num1 + num2 << std::endl;
+}
 
+// Created when its called NOT normally COMILER IGNORES UNTIL CALLED
+
+
+// Template to call methods thats all it is simple as dat
 
 int main()
 {
@@ -26,8 +35,10 @@ int main()
     Log<float>(3.3);
     Log<double>(3.3);
     Log<std::string>("Hello");
+    std::cout << std::endl;
+    AddNums(1,3);
+    AddNums<float>(1.3, 3);
 
-    std::cin.get();
     return 0;
 }
 
