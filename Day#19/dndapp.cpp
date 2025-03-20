@@ -29,12 +29,15 @@ std::string name;
 };
 
 
-
 int main()
 {
+    std::vector<int> Players;
+
+    std::cout << "Welcome to my dnd app!" << std::endl;
+
     while (true)
     {
 
-
+        break;
     }
 }
