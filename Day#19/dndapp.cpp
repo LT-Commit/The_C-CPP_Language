@@ -28,6 +28,14 @@ std::string name;
     
 };
 
+int options()
+{
+    int options = 0;
+    std::cout << "1. Create charecter" << std::endl;
+    std::cin >> options;
+    return options;
+}
+
 
 int main()
 {
@@ -37,6 +45,17 @@ int main()
 
     while (true)
     {
+        int Uop = options();
+
+        switch (Uop)
+        {
+        case 1:
+            std::cout << "You have created a charecter!";
+            break;
+        
+        default:
+            break;
+        }
 
         break;
     }
