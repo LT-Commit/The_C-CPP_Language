@@ -40,6 +40,7 @@ int options()
 int main()
 {
     std::vector<int> Players;
+    Player player;
 
     std::cout << "Welcome to my dnd app!" << std::endl;
 
@@ -50,7 +51,7 @@ int main()
         switch (Uop)
         {
         case 1:
-            Player player;
+            
             std::cout<< "\nEnter your new players health!" << std::endl;
             std::cin>> player.Health;
             std::cout<< "\nEnter your new players mana!" << std::endl;
@@ -62,6 +63,7 @@ int main()
         default:
             break;
         }
+        std::cout << "\n" << player.Mana << std::endl;
 
         break;
     }
