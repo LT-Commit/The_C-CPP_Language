@@ -50,7 +50,7 @@ int main()
         switch (Uop)
         {
         case 1:
-            std::cout << "You have created a charecter!";
+            Player player
             break;
         
         default:
