@@ -50,7 +50,7 @@ int main()
         switch (Uop)
         {
         case 1:
-            Player player
+            Player Player 
             break;
         
         default:
