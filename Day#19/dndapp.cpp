@@ -50,7 +50,13 @@ int main()
         switch (Uop)
         {
         case 1:
-            Player Player 
+            Player player;
+            std::cout<< "\nEnter your new players health!" << std::endl;
+            std::cin>> player.Health;
+            std::cout<< "\nEnter your new players mana!" << std::endl;
+            std::cin>> player.Mana;
+            std::cout<< "\nEnter your new players name!" << std::endl;
+            std::cin>> player.name;
             break;
         
         default:
