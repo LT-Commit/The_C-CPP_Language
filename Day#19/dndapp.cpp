@@ -31,7 +31,7 @@ std::string name;
 int options()
 {
     int options = 0;
-    std::cout << "1. Create charecter" << std::endl;
+    std::cout << "1. Create charecter\n2. View Charecter details" << std::endl;
     std::cin >> options;
     return options;
 }
@@ -59,15 +59,19 @@ int main()
             std::cout<< "\nEnter your new players name!" << std::endl;
             std::cin>> player.name;
             break;
+        case 2:
+            std::cout << "\nYour player details are:";
+            std::cout << "\nYour name is: " << player.name;
+            std::cout << "\nYour mana is: " << player.Mana;
+            std::cout << "\nYour health is: " << player.Health;
+            break;
         
         default:
             break;
         }
-        std::cout << "\nYour player details are:";
-        std::cout << "\nYour name is: " << player.name;
-        std::cout << "\nYour mana is: " << player.Mana;
-        std::cout << "\nYour health is: " << player.Health;
+    
+        
 
-        break;
+        
     }
 }
