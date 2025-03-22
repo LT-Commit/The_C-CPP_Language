@@ -65,7 +65,7 @@ int main()
         }
         std::cout << "\n" << player.Mana << std::endl;
         std::cout << "\n" << player.name << std::endl;
-        std::cout << "\n" << player.health << std::endl;
+        std::cout << "\n" << player.Health << std::endl;
 
         break;
     }
