@@ -63,9 +63,10 @@ int main()
         default:
             break;
         }
-        std::cout << "\n" << player.Mana << std::endl;
-        std::cout << "\n" << player.name << std::endl;
-        std::cout << "\n" << player.Health << std::endl;
+        std::cout << "\nYour player details are:";
+        std::cout << "\nYour name is: " << player.name;
+        std::cout << "\nYour mana is: " << player.Mana;
+        std::cout << "\nYour health is: " << player.Health;
 
         break;
     }
